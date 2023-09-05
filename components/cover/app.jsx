@@ -7,7 +7,7 @@ import Link from "next/link";
 import useCover from "@/hooks/useCover";
 
 const Cover = ({ name }) => {
-  const { ref, handleOpenInvitation } = useCover();
+  const { ref, showButton, handleOpenInvitation } = useCover();
 
   return (
     <Container>
@@ -42,14 +42,16 @@ const Cover = ({ name }) => {
                 You&apos;re Invited
               </h6>
             </div>
-            <div className="flex justify-center">
-              <Button
-                onClick={handleOpenInvitation}
-                extendClass="uppercase"
-                icon={<GrMail size={18} />}
-                title="Buka Undangan"
-              />
-            </div>
+            {showButton && (
+              <div className="flex justify-center">
+                <Button
+                  onClick={handleOpenInvitation}
+                  extendClass="uppercase"
+                  icon={<GrMail size={18} />}
+                  title="Buka Undangan"
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
