@@ -30,20 +30,37 @@ const Cover = ({ name }) => {
         />
         <div className="h-screen bg-background relative bg-[url('/images/texture.png')] bg-center bg-no-repeat bg-cover flex justify-center items-center">
           <div className="p-5 relative z-20">
-            <h3 className="text-center font-playfair-display text-2xl lg:text-3xl max-w-lg text-dark">
+            <h6
+              data-aos-duration="1000"
+              data-aos="zoom-in-up"
+              className="text-center text-primary font-public-sans text-3xl mb-1"
+            >
+              {decodeURIComponent(name)}
+            </h6>
+            <h6
+              data-aos-duration="1000"
+              data-aos-delay="300"
+              data-aos="zoom-in-up"
+              className="text-center text-dark italic text-base font-public-sans"
+            >
+              You&apos;re Invited to
+            </h6>
+            <h3
+              data-aos="zoom-in-up"
+              data-aos-duration="1000"
+              data-aos-delay="600"
+              className="text-center font-playfair-display text-2xl lg:text-3xl max-w-lg text-dark my-8"
+            >
               Karya Mecaru Rsi Gana Pedagingan Melaspas, Ngenteg Linggih lan
               Manusa Yadnya Mepandes
             </h3>
-            <div className="my-8">
-              <h6 className="text-center text-dark font-thin font-public-sans text-lg lg:text-xl">
-                Dear: <span>{decodeURIComponent(name)}</span>
-              </h6>
-              <h6 className="text-center mt-2 text-dark italic font-bold text-sm lg:text-base font-public-sans">
-                You&apos;re Invited
-              </h6>
-            </div>
             {showButton && (
-              <div className="flex justify-center">
+              <div
+                data-aos="zoom-in-up"
+                data-aos-duration="1000"
+                data-aos-delay="900"
+                className="flex justify-center"
+              >
                 <Button
                   onClick={handleOpenInvitation}
                   extendClass="uppercase"
