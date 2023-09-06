@@ -102,6 +102,7 @@ const Wishes = () => {
       <div className="flex flex-col mt-8 divide-y divide-background border-t border-t-background max-w-screen-md mx-auto">
         {wishesData?.data?.map((wishes) => (
           <WishesContent
+            key={wishes?._id}
             attend={wishes?.attend}
             name={wishes?.name}
             createdAt={moment
