@@ -6,6 +6,7 @@ import useAOS from "@/hooks/useAOS";
 import Ceremony from "@/components/partials/ceremony/app";
 import PlayButton from "@/components/elements/play.button/app";
 import usePlayMusic from "@/hooks/usePlayMusic";
+import Dates from "@/components/partials/dates/app";
 
 const Home = ({ params }) => {
   useAOS();
@@ -16,6 +17,7 @@ const Home = ({ params }) => {
       <Cover togglePlay={togglePlay} name={params.name} />
       <Persons />
       <Ceremony />
+      <Dates />
       <Wishes />
     </>
   );
