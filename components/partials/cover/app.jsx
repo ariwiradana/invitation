@@ -38,7 +38,7 @@ const Cover = ({ name }) => {
             </h6>
             <h6
               data-aos-duration="1000"
-              data-aos-delay="300"
+              data-aos-delay="200"
               data-aos="zoom-in-up"
               className="text-center text-dark italic text-base font-public-sans"
             >
@@ -47,7 +47,7 @@ const Cover = ({ name }) => {
             <h3
               data-aos="zoom-in-up"
               data-aos-duration="1000"
-              data-aos-delay="600"
+              data-aos-delay="400"
               className="text-center font-playfair-display text-xl lg:text-3xl max-w-lg text-dark my-8"
             >
               Karya Mecaru Rsi Gana Pedagingan Melaspas, Ngenteg Linggih lan
@@ -57,7 +57,7 @@ const Cover = ({ name }) => {
               <div
                 data-aos="zoom-in-up"
                 data-aos-duration="1000"
-                data-aos-delay="900"
+                data-aos-delay="600"
                 className="flex justify-center"
               >
                 <Button
