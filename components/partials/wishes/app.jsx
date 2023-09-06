@@ -11,24 +11,9 @@ import moment from "moment";
 import "moment/locale/id";
 moment.locale("id");
 
-const WishesContent = ({ name, createdAt, message, attend, index }) => {
-  // Create a Moment.js object from the input date
-  const dateObject = moment("2023-09-17");
-
-  // Extract day, hour, minutes, and seconds
-  const day = dateObject.format("dddd"); // Full day name (e.g., Monday)
-  const hour = dateObject.format("HH"); // 24-hour format (e.g., 14)
-  const minutes = dateObject.format("mm"); // Minutes (e.g., 30)
-  const seconds = dateObject.format("ss"); // Seconds (e.g., 45)
-
-  console.log({ day, hour, minutes, seconds });
+const WishesContent = ({ name, createdAt, message, attend }) => {
   return (
-    <div
-      className="py-4"
-      data-aos-duration="1000"
-      data-aos="zoom-in-up"
-      data-aos-delay={`${200 * index + 1}`}
-    >
+    <div className="py-4">
       <h5 className="font-public-sans text-primary text-lg">{name}</h5>
       <div className="flex divide-x">
         <div className="flex gap-x-1 pr-3">
@@ -67,13 +52,10 @@ const Wishes = () => {
 
   return (
     <Container className="px-5 py-20 bg-[url('/images/wave-pattern.png')] bg-center bg-no-repeat bg-cover">
-      <Title dataAosDuration="1000" dataAos="zoom-in-up" title="Kirim Ucapan" />
+      <Title title="Kirim Ucapan" />
       <form
-        data-aos-duration="1000"
-        data-aos="zoom-in-up"
-        data-aos-delay="200"
         onSubmit={handleSubmit}
-        className="flex flex-col gap-y-5 mt-6 max-w-screen-md mx-auto bg-primary bg-[url('/images/texture.png')] bg-no-repeat bg-cover bg-center] px-5 pt-10 pb-5 rounded-xl"
+        className="flex flex-col gap-y-5 mt-6 max-w-screen-md mx-auto px-5"
       >
         <TextField
           onChange={(e) => handleChange("name", e.target.value)}
@@ -81,40 +63,32 @@ const Wishes = () => {
           variant="outlined"
           label="Nama"
           size="small"
-          sx={{
-            "& .MuiInputBase-root": {
-              color: "white",
-              fontSize: 16,
-            },
-          }}
         />
         <TextField
-          sx={{
-            "& .MuiInputBase-root": {
-              color: "white",
-              fontSize: 16,
-            },
-          }}
           onChange={(e) => handleChange("message", e.target.value)}
           value={wishes.message}
-          label="Ucapan"
+          label="Message"
           multiline
           rows={6}
           variant="outlined"
           size="small"
         />
-        <div className="-mt-2 flex items-center">
-          <Checkbox
-            onChange={(e) => handleChange("attend", e.target.checked)}
-            checked={wishes.attend}
-            sx={{
-              color: "#ffff",
-              "&.Mui-checked": {
-                color: "#ffff",
-              },
-            }}
+        <div className="-mt-2">
+          <FormControlLabel
+            control={
+              <Checkbox
+                onChange={(e) => handleChange("attend", e.target.checked)}
+                checked={wishes.attend}
+                sx={{
+                  color: "#988567",
+                  "&.Mui-checked": {
+                    color: "#988567",
+                  },
+                }}
+              />
+            }
+            label="Akan Hadir"
           />
-          <h5 className="text-white font-semibold text-sm">Akan Hadir</h5>
         </div>
         <div>
           <Button
@@ -128,9 +102,8 @@ const Wishes = () => {
         </div>
       </form>
       <div className="flex flex-col mt-8 divide-y divide-background border-t border-t-background max-w-screen-md mx-auto">
-        {wishesData?.data?.map((wishes, index) => (
+        {wishesData?.data?.map((wishes) => (
           <WishesContent
-            index={index}
             key={wishes?._id}
             attend={wishes?.attend}
             name={wishes?.name}

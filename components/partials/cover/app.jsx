@@ -52,7 +52,7 @@ const Cover = ({ name, togglePlay }) => {
               Karya Mecaru Rsi Gana Pedagingan Melaspas, Ngenteg Linggih lan
               Manusa Yadnya Mepandes
             </h3>
-            {showButton ? (
+            {showButton && (
               <div
                 data-aos="zoom-in-up"
                 data-aos-duration="1000"
@@ -69,10 +69,6 @@ const Cover = ({ name, togglePlay }) => {
                   title="Buka Undangan"
                 />
               </div>
-            ) : (
-              <p className="text-center text-sm text-primary font-playfair-display">
-                17 / 09 / 2023
-              </p>
             )}
           </div>
         </div>
