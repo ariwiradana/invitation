@@ -1,12 +1,15 @@
 import React from "react";
 import Title from "@/components/elements/title/app";
 import Container from "@/components/container/app";
-import { BiTime, BiUserCheck, BiUserX } from "react-icons/bi";
+import { BiCalendar, BiTime, BiUserCheck, BiUserX } from "react-icons/bi";
 import { TbReload } from "react-icons/tb";
 import Button from "@/components/elements/button/app";
 import { Checkbox, FormControlLabel, TextField } from "@mui/material";
 import { FaPaperPlane } from "react-icons/fa";
 import useWishes from "@/hooks/useWishes";
+import moment from "moment";
+import "moment/locale/id";
+moment.locale("id");
 
 const WishesContent = ({ name, createdAt, message, attend }) => {
   return (
@@ -14,7 +17,7 @@ const WishesContent = ({ name, createdAt, message, attend }) => {
       <h5 className="font-public-sans text-primary text-lg">{name}</h5>
       <div className="flex divide-x">
         <div className="flex gap-x-1 pr-3">
-          <BiTime className="text-dark mt-[3px]" size={15} />
+          <BiCalendar className="text-dark mt-[3px]" size={15} />
           <p className="text-base font-playfair-display italic">{createdAt}</p>
         </div>
         <div className="flex gap-x-1 pl-3">
@@ -36,7 +39,16 @@ const WishesContent = ({ name, createdAt, message, attend }) => {
 };
 
 const Wishes = () => {
-  const { handleChange, handleSubmit, wishes } = useWishes();
+  const {
+    handleChange,
+    handleSubmit,
+    handleLoadMore,
+    wishes,
+    wishesData,
+    isLoading,
+    limit,
+  } = useWishes();
+
   return (
     <Container className="px-5 py-24 bg-[url('/images/wave-pattern.png')] bg-center bg-no-repeat bg-cover">
       <Title title="Kirim Ucapan" />
@@ -49,6 +61,7 @@ const Wishes = () => {
           value={wishes.name}
           variant="outlined"
           label="Nama"
+          size="small"
         />
         <TextField
           onChange={(e) => handleChange("message", e.target.value)}
@@ -57,6 +70,7 @@ const Wishes = () => {
           multiline
           rows={6}
           variant="outlined"
+          size="small"
         />
         <div className="-mt-2">
           <FormControlLabel
@@ -86,22 +100,26 @@ const Wishes = () => {
         </div>
       </form>
       <div className="flex flex-col mt-8 divide-y divide-background border-t border-t-background max-w-screen-md mx-auto">
-        <WishesContent
-          attend={true}
-          name="Dek Krisna"
-          createdAt="17 Agustus 2023"
-          message="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus itaque animi quo sequi error assumenda eligendi. 😍"
-        />
-        <WishesContent
-          attend={false}
-          name="Ari"
-          createdAt="15 Agustus 2020"
-          message="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus itaque animi quo sequi error assumenda eligendi, veniam necessitatibus consectetur accusamus."
-        />
+        {wishesData?.data?.map((wishes) => (
+          <WishesContent
+            attend={wishes?.attend}
+            name={wishes?.name}
+            createdAt={moment
+              .unix(wishes?.created_at)
+              .format("dddd, D MMMM YYYY")}
+            message={wishes?.message}
+          />
+        ))}
       </div>
-      <div className="flex justify-center mt-6">
-        <Button icon={<TbReload size={18} />} title="Load More" />
-      </div>
+      {wishesData?.total > limit && (
+        <div className="flex justify-center mt-6">
+          <Button
+            icon={<TbReload size={18} />}
+            title="Load More"
+            onClick={handleLoadMore}
+          />
+        </div>
+      )}
     </Container>
   );
 };

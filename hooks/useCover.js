@@ -5,7 +5,12 @@ const useCover = () => {
   const [showButton, setShowButton] = useState(true);
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     document.body.style.overflow = "hidden";
+    setShowButton(true);
   }, []);
 
   const handleOpenInvitation = () => {
