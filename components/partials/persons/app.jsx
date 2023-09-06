@@ -14,7 +14,12 @@ const Persons = () => {
     <div className="px-5 pb-24 pt-16 bg-[url('/images/wave-pattern.png')] bg-center bg-no-repeat bg-cover">
       <div data-aos-duration="1000" data-aos="zoom-in-up">
         <div className="flex justify-center transform rotate-45 translate-y-2">
-          <Image alt="flower-top" src="/images/flower-1.png" width={80} height={80} />
+          <Image
+            alt="flower-top"
+            src="/images/flower-1.png"
+            width={80}
+            height={80}
+          />
         </div>
       </div>
 
@@ -29,7 +34,7 @@ const Persons = () => {
         data-aos-duration="1000"
         data-aos="zoom-in-up"
         data-aos-delay="400"
-        className="mt-5 text-center text-base font-public-sans text-dark leading-6 max-w-screen-lg mx-auto"
+        className="mt-5 text-center text-base font-public-sans text-dark leading-6 max-w-screen-md mx-auto"
       >
         Atas Asung Kertha Wara Nugraha Ida Sang Hyang Widhi Wasa/Tuhan Yang Maha
         Esa kami bermaksud mengundang Bapak/Ibu/Saudara/i pada Upacara Manusa
@@ -42,7 +47,10 @@ const Persons = () => {
         className="flex flex-col gap-y-4 items-center mt-8"
       >
         {persons?.map((person) => (
-          <h5 key={person} className="text-lg font-public-sans font-medium text-primary">
+          <h5
+            key={person}
+            className="text-lg font-public-sans font-medium text-primary"
+          >
             {person}
           </h5>
         ))}

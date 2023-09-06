@@ -3,15 +3,15 @@ import Button from "@/components/elements/button/app";
 import Link from "next/link";
 import React from "react";
 import { BiSolidCalendar, BiSolidMap, BiSolidTimeFive } from "react-icons/bi";
-import { FaPaperPlane } from "react-icons/fa";
+import { FaMap, FaPaperPlane } from "react-icons/fa";
 
 const Ceremony = () => {
   return (
-    <div className="px-5 py-16 bg-primary bg-[url('/images/texture.png')] bg-no-repeat bg-cover bg-center">
+    <div className="px-5 py-20 lg:py-24 bg-primary bg-[url('/images/texture.png')] bg-no-repeat bg-cover bg-center">
       <p
         data-aos-duration="1000"
         data-aos="zoom-in-up"
-        className="text-center text-base font-public-sans text-white leading-6 max-w-screen-lg mx-auto"
+        className="text-center text-base font-public-sans text-white leading-6 max-w-screen-md mx-auto"
       >
         Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila
         Bapak/Ibu/Saudara/i, berkenan hadir untuk memberikan doa restu.
@@ -20,7 +20,7 @@ const Ceremony = () => {
         data-aos-duration="1000"
         data-aos="zoom-in-up"
         data-aos-delay="200"
-        className="border-2 border-white rounded-3xl overflow-hidden mt-8 flex"
+        className="border-2 border-white rounded-3xl overflow-hidden mt-8 flex max-w-screen-md mx-auto"
       >
         <div className="p-5">
           <h5 className="uppercase text-2xl text-white font-playfair-display leading-loose border-b-2 border-b-white whitespace-nowrap">
@@ -53,7 +53,7 @@ const Ceremony = () => {
               >
                 <Button
                   extendClass="uppercase"
-                  icon={<FaPaperPlane />}
+                  icon={<FaMap />}
                   title="Petunjuk Arah"
                 />
               </Link>

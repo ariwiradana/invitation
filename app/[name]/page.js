@@ -16,7 +16,7 @@ const Home = ({ params }) => {
       <Cover togglePlay={togglePlay} name={params.name} />
       <Persons />
       <Ceremony />
-      {/* <Wishes /> */}
+      <Wishes />
     </>
   );
 };

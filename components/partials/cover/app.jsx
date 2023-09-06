@@ -47,7 +47,7 @@ const Cover = ({ name, togglePlay }) => {
               data-aos="zoom-in-up"
               data-aos-duration="1000"
               data-aos-delay="400"
-              className="text-center font-playfair-display text-xl lg:text-3xl max-w-lg text-dark my-8"
+              className="text-center font-playfair-display text-xl lg:text-3xl max-w-screen-md text-dark my-8"
             >
               Karya Mecaru Rsi Gana Pedagingan Melaspas, Ngenteg Linggih lan
               Manusa Yadnya Mepandes
