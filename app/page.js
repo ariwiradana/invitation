@@ -1,4 +1,5 @@
 "use client";
+import PlayButton from "@/components/elements/play.button/app";
 import Cover from "@/components/partials/cover/app";
 import Persons from "@/components/partials/persons/app";
 import Wishes from "@/components/partials/wishes/app";

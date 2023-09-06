@@ -5,12 +5,11 @@ import { GrMail } from "react-icons/gr";
 import Container from "../../container/app";
 import useCover from "@/hooks/useCover";
 
-const Cover = ({ name }) => {
+const Cover = ({ name, togglePlay }) => {
   const { ref, showButton, handleOpenInvitation } = useCover();
-
   return (
     <Container>
-      <div className="relative" ref={ref}>
+      <div className="relative z-50" ref={ref}>
         <Image
           priority
           alt="flower-top"
@@ -61,7 +60,10 @@ const Cover = ({ name }) => {
                 className="flex justify-center"
               >
                 <Button
-                  onClick={handleOpenInvitation}
+                  onClick={() => {
+                    handleOpenInvitation();
+                    togglePlay();
+                  }}
                   extendClass="uppercase"
                   icon={<GrMail size={18} />}
                   title="Buka Undangan"
