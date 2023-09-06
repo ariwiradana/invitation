@@ -1,8 +1,8 @@
 "use client";
+import Cover from "@/components/partials/cover/app";
+import Wishes from "@/components/partials/wishes/app";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Cover from "@/components/cover/app";
-import Wishes from "@/components/wishes/app";
 import { useEffect } from "react";
 
 const Home = () => {
@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
       <Cover name="Nama Undangan" />
-      <div className="h-screen"></div>
+      <div className="h-[20vh]"></div>
       <Wishes />
     </>
   );

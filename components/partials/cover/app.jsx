@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Image from "next/image";
-import Button from "../elements/button/app";
+import Button from "../../elements/button/app";
 import { GrMail } from "react-icons/gr";
-import Container from "../container/app";
-import Link from "next/link";
+import Container from "../../container/app";
 import useCover from "@/hooks/useCover";
 
 const Cover = ({ name }) => {
@@ -49,7 +48,7 @@ const Cover = ({ name }) => {
               data-aos="zoom-in-up"
               data-aos-duration="1000"
               data-aos-delay="600"
-              className="text-center font-playfair-display text-2xl lg:text-3xl max-w-lg text-dark my-8"
+              className="text-center font-playfair-display text-xl lg:text-3xl max-w-lg text-dark my-8"
             >
               Karya Mecaru Rsi Gana Pedagingan Melaspas, Ngenteg Linggih lan
               Manusa Yadnya Mepandes
