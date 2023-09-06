@@ -45,8 +45,9 @@ const Wishes = () => {
     handleLoadMore,
     wishes,
     wishesData,
-    isLoading,
+    loading,
     limit,
+    loadingLoadMore,
   } = useWishes();
 
   return (
@@ -91,6 +92,7 @@ const Wishes = () => {
         </div>
         <div>
           <Button
+            loading={loading}
             disabled={wishes.name === "" || wishes.message === ""}
             icon={<FaPaperPlane />}
             type="submit"
@@ -115,7 +117,12 @@ const Wishes = () => {
       {wishesData?.total > limit && (
         <div className="flex justify-center mt-6">
           <Button
-            icon={<TbReload size={18} />}
+            icon={
+              <TbReload
+                className={loadingLoadMore ? "animate-spin" : "animate-none"}
+                size={18}
+              />
+            }
             title="Load More"
             onClick={handleLoadMore}
           />
