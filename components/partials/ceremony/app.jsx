@@ -9,16 +9,16 @@ const Ceremony = () => {
   return (
     <div className="px-5 py-20 lg:py-24 bg-primary bg-[url('/images/texture.png')] bg-no-repeat bg-cover bg-center">
       <p
-        data-aos-duration="1000"
-        data-aos="zoom-in-up"
+        data-aos-duration="2000"
+        data-aos="fade-up"
         className="text-center text-base font-public-sans text-white leading-6 max-w-screen-md mx-auto"
       >
         Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila
         Bapak/Ibu/Saudara/i, berkenan hadir untuk memberikan doa restu.
       </p>
       <div
-        data-aos-duration="1000"
-        data-aos="zoom-in-up"
+        data-aos-duration="2000"
+        data-aos="fade-up"
         data-aos-delay="200"
         className="border-2 border-white rounded-3xl overflow-hidden mt-8 flex max-w-screen-md mx-auto"
       >

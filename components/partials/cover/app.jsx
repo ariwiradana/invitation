@@ -29,23 +29,23 @@ const Cover = ({ name, togglePlay }) => {
         <div className="h-screen bg-background relative bg-[url('/images/texture.png')] bg-center bg-no-repeat bg-cover flex justify-center items-center">
           <div className="p-5 relative z-20">
             <h6
-              data-aos-duration="1000"
-              data-aos="zoom-in-up"
+              data-aos-duration="2000"
+              data-aos="fade-up"
               className="text-center text-primary font-public-sans text-3xl mb-1"
             >
               {decodeURIComponent(name)}
             </h6>
             <h6
-              data-aos-duration="1000"
+              data-aos-duration="2000"
               data-aos-delay="200"
-              data-aos="zoom-in-up"
+              data-aos="fade-up"
               className="text-center text-dark italic text-base font-public-sans"
             >
               You&apos;re Invited to
             </h6>
             <h3
-              data-aos="zoom-in-up"
-              data-aos-duration="1000"
+              data-aos="fade-up"
+              data-aos-duration="2000"
               data-aos-delay="400"
               className="text-center font-playfair-display text-xl lg:text-3xl max-w-screen-md text-dark my-8"
             >
@@ -54,8 +54,8 @@ const Cover = ({ name, togglePlay }) => {
             </h3>
             {showButton && (
               <div
-                data-aos="zoom-in-up"
-                data-aos-duration="1000"
+                data-aos="fade-up"
+                data-aos-duration="2000"
                 data-aos-delay="600"
                 className="flex justify-center"
               >

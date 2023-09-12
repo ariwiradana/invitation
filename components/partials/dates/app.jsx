@@ -21,7 +21,7 @@ const Dates = () => {
   const { timeRemaining } = useDates("2023-09-17T00:00:00Z");
 
   return (
-    <Container className="px-5 py-12 relative bg-[url('/images/wave-pattern.png')] bg-center bg-no-repeat bg-cover">
+    <Container className="px-5 py-12 relative max-w-screen-md mx-auto bg-[url('/images/wave-pattern.png')] bg-center bg-no-repeat bg-cover">
       <div className="flex justify-center absolute inset-0 w-full h-full items-center p-5">
         <Image
           alt="flower-2"
@@ -33,8 +33,8 @@ const Dates = () => {
       </div>
       <div className="relative z-10 flex flex-col gap-y-8">
         <p
-          data-aos-duration="1000"
-          data-aos="zoom-in-up"
+          data-aos-duration="2000"
+          data-aos="fade-up"
           className="mt-5 text-center text-base font-public-sans text-dark leading-6 max-w-screen-md mx-auto"
         >
           Dengan ini (Yadnya), kami berbakti kepada Hyang Widhi dan dengan ini
@@ -43,8 +43,8 @@ const Dates = () => {
           tinggi.
         </p>
         <div
-          data-aos-duration="1000"
-          data-aos="zoom-in-up"
+          data-aos-duration="2000"
+          data-aos="fade-up"
           data-aos-delay="200"
           className="grid grid-cols-4 gap-x-4"
         >

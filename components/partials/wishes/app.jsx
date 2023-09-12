@@ -52,10 +52,13 @@ const Wishes = () => {
 
   return (
     <Container className="px-5 py-20 bg-[url('/images/wave-pattern.png')] bg-center bg-no-repeat bg-cover">
-      <Title title="Kirim Ucapan" />
+      <Title dataAos="fade-up" dataAosDuration="2000" title="Kirim Ucapan" />
       <form
+        data-aos="fade-up"
+        data-aos-duration="2000"
+        data-aos-delay="200"
         onSubmit={handleSubmit}
-        className="flex flex-col gap-y-5 mt-6 max-w-screen-md mx-auto px-5"
+        className="flex flex-col gap-y-5 mt-6 max-w-screen-md mx-auto"
       >
         <TextField
           onChange={(e) => handleChange("name", e.target.value)}
@@ -101,7 +104,12 @@ const Wishes = () => {
           />
         </div>
       </form>
-      <div className="flex flex-col mt-8 divide-y divide-background border-t border-t-background max-w-screen-md mx-auto">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="2000"
+        data-aos-delay="400"
+        className="flex flex-col mt-8 divide-y divide-background border-t border-t-background max-w-screen-md mx-auto"
+      >
         {wishesData?.data?.map((wishes) => (
           <WishesContent
             key={wishes?._id}

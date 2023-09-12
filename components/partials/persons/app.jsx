@@ -12,7 +12,7 @@ const persons = [
 const Persons = () => {
   return (
     <div className="px-5 pb-24 pt-16 bg-[url('/images/wave-pattern.png')] bg-center bg-no-repeat bg-cover">
-      <div data-aos-duration="1000" data-aos="zoom-in-up">
+      <div data-aos-duration="2000" data-aos="fade-up">
         <div className="flex justify-center transform rotate-45 translate-y-2">
           <Image
             alt="flower-top"
@@ -24,15 +24,15 @@ const Persons = () => {
       </div>
 
       <Title
-        dataAosDuration="1000"
+        dataAosDuration="2000"
         dataAosDelay="200"
-        dataAos="zoom-in-up"
+        dataAos="fade-up"
         title="Om Swastyastu"
         extendClass="uppercase"
       />
       <p
-        data-aos-duration="1000"
-        data-aos="zoom-in-up"
+        data-aos-duration="2000"
+        data-aos="fade-up"
         data-aos-delay="400"
         className="mt-5 text-center text-base font-public-sans text-dark leading-6 max-w-screen-md mx-auto"
       >
@@ -41,8 +41,8 @@ const Persons = () => {
         Yadnya Mepandes (Potong Gigi) putra-putri kami.
       </p>
       <div
-        data-aos-duration="1000"
-        data-aos="zoom-in-up"
+        data-aos-duration="2000"
+        data-aos="fade-up"
         data-aos-delay="600"
         className="flex flex-col gap-y-4 items-center mt-8"
       >
